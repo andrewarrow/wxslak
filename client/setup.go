@@ -9,7 +9,10 @@ var ui_resume wx.Button
 var ui_bar wx.Gauge
 var ui_percent wx.StaticText
 
-func setupError(f *UploadFrame, text string) {
+func setupFeeds(f *TheFrame) {
+}
+
+func setupError(f *TheFrame, text string) {
 	row3 := wx.NewBoxSizer(wx.VERTICAL)
 	msg := wx.NewStaticText(f.frame, wx.ID_ANY, text, wx.DefaultPosition, wx.DefaultSize, 0)
 	row3.Add(msg, 0, wx.ALL|wx.EXPAND, 5)
@@ -19,7 +22,7 @@ func setupError(f *UploadFrame, text string) {
 	f.frame.Layout()
 }
 
-func setupLogin(f *UploadFrame) {
+func setupLogin(f *TheFrame) {
 	row := wx.NewBoxSizer(wx.HORIZONTAL)
 	msg := wx.NewStaticText(f.frame, wx.ID_ANY, "username", wx.DefaultPosition, wx.DefaultSize, 0)
 	row.Add(msg, 0, wx.ALL|wx.EXPAND, 5)

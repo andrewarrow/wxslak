@@ -2,17 +2,17 @@ package client
 
 import "github.com/dontpanic92/wxGo/wx"
 
-const UPLOAD_WORKER_ID = wx.ID_HIGHEST + 1
+const THE_WORKER_ID = wx.ID_HIGHEST + 1
 
 var username, password, team string
 
-type UploadFrame struct {
+type TheFrame struct {
 	frame wx.Frame
 	sizer wx.BoxSizer
 }
 
-func NewUploadFrame() UploadFrame {
-	f := UploadFrame{}
+func NewTheFrame() TheFrame {
+	f := TheFrame{}
 	f.frame = wx.NewFrame(wx.NullWindow, -1, "wxslak")
 
 	menubar := wx.NewMenuBar()
@@ -39,13 +39,13 @@ func NewUploadFrame() UploadFrame {
 
 	setupLogin(&f)
 
-	wx.Bind(f.frame, wx.EVT_THREAD, f.evtThread, UPLOAD_WORKER_ID)
+	wx.Bind(f.frame, wx.EVT_THREAD, f.evtThread, THE_WORKER_ID)
 	return f
 }
 
 func Setup() {
 	wx1 := wx.NewApp()
-	f := NewUploadFrame()
+	f := NewTheFrame()
 	f.frame.Show()
 	wx1.MainLoop()
 }
