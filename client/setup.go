@@ -10,6 +10,7 @@ var ui_bar wx.Gauge
 var ui_percent wx.StaticText
 
 func setupFeeds(f *TheFrame) {
+	f.sizer.Clear(true)
 }
 
 func setupError(f *TheFrame, text string) {
